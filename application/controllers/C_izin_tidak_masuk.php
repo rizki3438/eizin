@@ -89,12 +89,14 @@ class C_izin_tidak_masuk extends CI_Controller
         $data['id_pimpinan'] = $id_pimpinan;
         $data['alasan_ditolak'] = "-";
 		
-		$upload = $this->uploader->image();
+	$upload = $this->uploader->image();
 		
-		if($upload['status']=="success"){
+	if($upload['status']=="success"){
             $nama_file=$upload['data']['file_name'];
             $data['bukti'] = $nama_file;
-	
+	}else{
+	    $data['bukti'] = "";
+        }
             $insert = $this->App->insert('pengajuan_izin', $data);
             if ($insert) {
                 $diff  = $data['end'] - $data['start'];
@@ -107,11 +109,7 @@ class C_izin_tidak_masuk extends CI_Controller
                 $this->session->set_flashdata('alert', 'danger|<b>Gagal</b> Gagal mengajukan surat izin.');
                 redirect(base_url($url));
             }
-		}
-        else{
-            $this->session->set_flashdata('alert', 'danger|<b>Gagal</b> Gagal mengupload gambar.');
-            redirect(base_url($url));
-        }
+		
     }
 
     public function generateRandomString($length = 8)
