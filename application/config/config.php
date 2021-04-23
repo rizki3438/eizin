@@ -25,7 +25,7 @@ date_default_timezone_set('Asia/Jakarta');
 */
 $config['base_url'] = 'https://izin.kejari-kediri.go.id/';
 $config['api-key-wa'] = '';
-/*BLbrAeJ59FDXwHRBLfQKgGxE3VA22rt4AOSaGgWPqWVkH8K9s5dePPLSlxvjeVPG*/
+
 /*
 |--------------------------------------------------------------------------
 | Index File

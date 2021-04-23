@@ -89,14 +89,14 @@ class C_izin_tidak_masuk extends CI_Controller
         $data['id_pimpinan'] = $id_pimpinan;
         $data['alasan_ditolak'] = "-";
 		
-	$upload = $this->uploader->image();
+		$upload = $this->uploader->image();
 		
-	if($upload['status']=="success"){
+		if($upload['status']=="success"){
             $nama_file=$upload['data']['file_name'];
             $data['bukti'] = $nama_file;
-	}else{
-	    $data['bukti'] = "";
-        }
+		}else{
+			$data['bukti'] = "";
+			}
             $insert = $this->App->insert('pengajuan_izin', $data);
             if ($insert) {
                 $diff  = $data['end'] - $data['start'];
@@ -109,7 +109,7 @@ class C_izin_tidak_masuk extends CI_Controller
                 $this->session->set_flashdata('alert', 'danger|<b>Gagal</b> Gagal mengajukan surat izin.');
                 redirect(base_url($url));
             }
-		
+        
     }
 
     public function generateRandomString($length = 8)
@@ -350,9 +350,22 @@ class C_izin_tidak_masuk extends CI_Controller
         $view['rowdata'] = $this->M_izin_tidak_masuk->get_izin_tdk_msk_code($code)->row();
         $view['nrp'] = $this->M_izin_tidak_masuk->get_nrp($code)->row();
         $view['_title'] = "SURAT IZIN TIDAK MASUK - ".$view['rowdata']->nama;
-
+		$this->generate_qrcode($view['pimpinan']->nrp);//pemipin
+        $this->generate_qrcode($view['rowdata']->nrp);//karyawan
         $this->pdf->setFileName('SURAT IZIN TIDAK MASUK - '.$view['rowdata']->nama);
         $this->pdf->setPaper('A4', 'Potrait');
         $this->pdf->loadView('pdf/surat_izin_tidak_masuk', $view);
+    }
+	
+	public function generate_qrcode($data)
+    {
+        $this->load->library('ciqrcode');
+        $qr_image=$data.'.png';
+        $params['data'] = $data;
+        $params['level'] = 'H';
+        $params['size'] = 12;
+        $params['savename'] =FCPATH."assets/uploads/qr_code/".$qr_image;
+        $this->ciqrcode->generate($params);
+        
     }
 }

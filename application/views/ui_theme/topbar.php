@@ -5,7 +5,7 @@
       <span class="topbar-btn topbar-menu-toggler"><i>&#9776;</i></span>
 
       <div class="topbar-brand">
-        <a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>/assets/img/logo.png" style="height: 70px;" alt="..."></a>
+        <a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>/assets/uploads/logo.png" style="height: 70px;" alt="..."></a>
       </div>
 
       <div class="topbar-divider d-none d-md-block"></div>

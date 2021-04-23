@@ -12,7 +12,7 @@ class Uploader
 	{
 		$config['upload_path'] = './assets/uploads/bukti_izin';
 		$config['allowed_types'] = 'gif|jpg|png';
-		$config['max_size'] = 2000;
+		$config['max_size'] = 10000;
 		$config['overwrite'] = true;
 		$config['encrypt_name'] = true;
 

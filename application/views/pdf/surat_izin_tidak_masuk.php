@@ -161,7 +161,7 @@
               </div>
               <div class="pos" id="_54:650" style="top:650;left:54">
                   <span id="_15.1" style=" font-family:Arial; font-size:15.1px; color:#000000">
-                      <?php echo '<img src="https://chart.googleapis.com/chart?chs=100x100&cht=qr&chl='.$pimpinan->nama.'%20%28'.$pimpinan->nrp.'%29&choe=UTF-8">';?></span>
+                      <img style="width: 100px; height: 100px;" src="assets/uploads/qr_code/<?php echo $pimpinan->nrp; ?>.png"></span>
               </div>
               <div class="pos" id="_26:730" style="top:730;left:26">
                   <span id="_15.1" style=" font-family:Arial; font-size:15.1px; color:#000000">
@@ -175,9 +175,9 @@
                   <span id="_15.4" style=" font-family:Arial; font-size:15.4px; color:#000000">
                       Hormat Saya,</span>
               </div>
-              <div class="pos" id="_348:650" style="top:650;left:348">
+              <div class="pos" id="_348:650" style="top:650;left:345">
                   <span id="_15.1" style=" font-family:Arial; font-size:15.1px; color:#000000">
-                     <?php echo '<img src="https://chart.googleapis.com/chart?chs=100x100&cht=qr&chl='.$rowdata->nama.'%20%28'.$rowdata->nrp.'%29&choe=UTF-8">';?></span>
+                      <img style="width: 100px; height: 100px;" src="assets/uploads/qr_code/<?php echo $rowdata->nrp; ?>.png"></span>
               </div>
               <div class="pos" id="325:730" style="top:730;left:325">
                   <span id="_15.1" style=" font-family:Arial; font-size:15.1px; color:#000000">
@@ -193,4 +193,3 @@
     <!-- </div> -->
   </body>
 </html>
-
