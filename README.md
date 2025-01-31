@@ -1,3 +1,3 @@
 # Minsys
-Project Open Source Minimalis System Mikrotik untuk usaha ISP / RT-RW NET
+Project Magang bidang Kepegawaian di Kejaksaan Negeri Kota Kediri
 # britaincourse
